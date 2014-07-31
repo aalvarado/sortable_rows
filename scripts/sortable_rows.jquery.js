@@ -1,6 +1,5 @@
 /*
- *  Made with jQuery Boilerplate - v3.3.4
- *  Made by Zeno Rocha
+ *  Made with jQuery Boilerplate - v3.3.4 by Zeno Rocha
  *  Under MIT License
  */
 
