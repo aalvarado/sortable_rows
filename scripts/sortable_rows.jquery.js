@@ -107,7 +107,7 @@
 			$.each(rows, function(index, row){
 				if( row == parentRow[0] ){
 					currentIdx = index;
-
+					return;
 				}
 			});
 
