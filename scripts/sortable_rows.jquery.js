@@ -1,13 +1,13 @@
 /*
- *  Made with jQuery Boilerplate - v3.3.4 by Zeno Rocha
- *  Under MIT License
+ *	Made with jQuery Boilerplate - v3.3.4 by Zeno Rocha
+ *	Under MIT License
  */
 
 ;(function ( $, window, document, undefined ) {
 	var pluginName = "sortableRows",
 		defaults = {
 		sortableSelector: '.sort',
-		upLinkTemplate:   '<a href="#">[Up]</a>',
+		upLinkTemplate:		'<a href="#">[Up]</a>',
 		downLinkTemplate: '<a href="#">[Down]</a>',
 		upLinkAttrs : {
 			class: 'sortable-row-up'
@@ -35,8 +35,8 @@
 		},
 		sortRows: function(){
 			var plugin = this;
-      var settings = plugin.settings;
-      var element = plugin.element;
+			var settings = plugin.settings;
+			var element = plugin.element;
 			var rows = plugin.getRows(element);
 
 			rows.sort(function(a,b){
@@ -78,7 +78,7 @@
 
 		setRowsValues: function(){
 			var plugin = this;
-      var element = plugin.element;
+			var element = plugin.element;
 			var rows = plugin.getRows(element);
 
 			$.each(rows, function(index, row) {
