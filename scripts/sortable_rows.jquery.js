@@ -28,13 +28,15 @@
 	$.extend(Plugin.prototype, {
 		init: function () {
 
-			this.sortRows(this.element, this.settings);
-			this.setRowsValues(this.element, this.settings);
+			this.sortRows();
+			this.setRowsValues();
 			this.addUpDownLinks(this.element, this.settings);
 			this.setupLinks(this.element, this.settings);
 		},
-		sortRows: function(element, settings){
+		sortRows: function(){
 			var plugin = this;
+      var settings = plugin.settings;
+      var element = plugin.element;
 			var rows = plugin.getRows(element);
 
 			rows.sort(function(a,b){
@@ -62,32 +64,33 @@
 			return $(element).find('tbody tr').get();
 		},
 
-		getRowSortableEl: function(element, settings) {
-			return $( element ).find(settings.sortableSelector);
+		getRowSortableEl: function(element) {
+			return $( element ).find(this.settings.sortableSelector);
 		},
 
 		getRowSortableValue: function(element, settings){
-			return this.getRowSortableEl(element, settings).val();
+			return this.getRowSortableEl(element).val();
 		},
 
-		setRowSortableValue: function(element, settings, value) {
-			return this.getRowSortableEl(element, settings).val(value);
+		setRowSortableValue: function(element, value) {
+			return this.getRowSortableEl(element).val(value);
 		},
 
-		setRowsValues: function(element, settings){
+		setRowsValues: function(){
 			var plugin = this;
+      var element = plugin.element;
 			var rows = plugin.getRows(element);
 
 			$.each(rows, function(index, row) {
-				plugin.setRowSortableValue(row, settings, index);
+				plugin.setRowSortableValue(row, index);
 			});
 		},
 
 		addUpDownLinks: function(element, settings){
-			this.getRowSortableEl(element, settings).after($( settings.upLinkTemplate ).
+			this.getRowSortableEl(element).after($( settings.upLinkTemplate ).
 				attr(settings.upLinkAttrs)
 			);
-			this.getRowSortableEl(element, settings).after($( settings.downLinkTemplate ).
+			this.getRowSortableEl(element).after($( settings.downLinkTemplate ).
 				attr(settings.downLinkAttrs)
 			);
 		},
@@ -122,7 +125,7 @@
 				var cssClass = $(this).attr('class');
 				if (cssClass == settings.upLinkAttrs.class || cssClass == settings.downLinkAttrs.class) {
 					plugin.moveRow(this, settings, cssClass);
-					plugin.setRowsValues(plugin.element, settings);
+					plugin.setRowsValues();
 					event.preventDefault();
 				}
 			});
