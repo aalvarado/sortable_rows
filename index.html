@@ -2,85 +2,24 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Sortable Row</title>
+		<title>Sortable Rows demo</title>
 		<meta name="description" content="">
 		<meta name="author" content="">
 		<link rel="stylesheet" href="css/main.css" />
+
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="scripts/sortable_rows.jquery.js" type="text/javascript" charset="utf-8"></script>
-		<script src="scripts/main.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../src/sortable_rows.jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="main.js" type="text/javascript" charset="utf-8"></script>
 
 	</head>
 	<body>
-		<table class='sortable'>
-			<thead>
-				<tr>
-					<th>
-						Order
-					</th>
-					<th>
-						Name
-					</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>
-						<input type="text" name="order_1" value="1" id="order_1" class='sort'>
-					</td>
-					<td>
-						<input type="text" name="name_1" value="Foo 1" id="name_1">
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<input type="text" name="order" value="0" id="order" class='sort'>
-					</td>
-					<td>
-						<input type="text" name="name_0" value="Foo 0" id="name_0">
-					</td>
-				</tr>
-			</tbody>
-		</table>
+			<a href="demo/index.html">
+				<h1>Demo</h1>
+			</a>
+			
+			<a href="spec_runner.html">
+				<h1>Specs</h1>
+			</a>
 
-
-		<table class='sortable'>
-			<thead>
-				<tr>
-					<th>
-						Order
-					</th>
-					<th>
-						Name
-					</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>
-						<input type="text" name="orderx_1" value="3" id="orderx_1" class='sort'>
-					</td>
-					<td>
-						<input type="text" name="namex_1" value="Foo 3" id="name_1">
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<input type="text" name="orderx_1" value="1" id="orderx_1" class='sort'>
-					</td>
-					<td>
-						<input type="text" name="namex_1" value="Foo 1" id="name_1">
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<input type="text" name="orderx_2" value="0" id="orderx_2" class='sort'>
-					</td>
-					<td>
-						<input type="text" name="namex_0" value="Foo 0" id="name_0">
-					</td>
-				</tr>
-			</tbody>
-		</table>
 	</body>
 </html>
