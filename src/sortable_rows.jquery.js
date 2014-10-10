@@ -35,7 +35,7 @@
 
 			this.sortRows();
 			this.setRowsValues();
-			this.addUpDownLinks(this.element, this.settings);
+			this.addUpDownLinks();
 			this.setupLinks(this.element, this.settings);
 		},
 		sortRows: function(){
@@ -66,7 +66,7 @@
 		},
 
 		getRows: function(element){
-			return $(element).find('tbody tr').get();
+			return $(this.element).find('tbody tr:visible').get();
 		},
 
 		getRowSortableEl: function(element) {
@@ -92,12 +92,17 @@
 		},
 
 		addUpDownLinks: function(element, settings){
-			this.getRowSortableEl(element).after($( settings.upLinkTemplate ).
-				attr(settings.upLinkAttrs)
-			);
-			this.getRowSortableEl(element).after($( settings.downLinkTemplate ).
-				attr(settings.downLinkAttrs)
-			);
+			var plugin = this;
+
+			this.getRowSortableEl(plugin.element).each(function(){
+				if ( ( $(this).next( '.' + plugin.settings.downLinkAttrs.class )[0] ) ){
+					return;
+				}
+				$( this ).after($( plugin.settings.upLinkTemplate ).
+					attr(plugin.settings.upLinkAttrs)
+				).after($( plugin.settings.downLinkTemplate ).
+					attr(plugin.settings.downLinkAttrs));
+			});
 		},
 
 		moveRow: function(element, settings, direction){
@@ -134,6 +139,11 @@
 					event.preventDefault();
 				}
 			});
+		},
+
+		reload: function() {
+			this.setRowsValues();
+			this.addUpDownLinks();
 		}
 
 	});
