@@ -1,6 +1,6 @@
-/*
- *
-/*
+/* Author: Adan Alvarado
+ * Source: http://github.com/aalvarado/sortable_rows
+/* License: MIT
 */
 /* --------------------------------------
  *	Made with jQuery Boilerplate - v3.3.4 by Zeno Rocha
@@ -48,7 +48,7 @@
 				var _a = plugin.getRowSortableValue(a,settings);
 				var _b = plugin.getRowSortableValue(b,settings);
 
-				if(_a < _b ){
+				if( plugin.is_blank(_b) || ( _a < _b ) ){
 					return -1;
 				}
 
@@ -63,6 +63,10 @@
 				$(element).children('tbody').append(row);
 			});
 
+		},
+
+		is_blank: function(val){
+			return (typeof(v) === 'undefined' || v === null);
 		},
 
 		getRows: function(element){
