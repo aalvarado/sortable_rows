@@ -32,12 +32,12 @@
 
 	$.extend(Plugin.prototype, {
 		init: function () {
-
 			this.sortRows();
 			this.setRowsValues();
 			this.addUpDownLinks();
 			this.setupLinks(this.element, this.settings);
 		},
+
 		sortRows: function(){
 			var plugin = this;
 			var settings = plugin.settings;
@@ -45,8 +45,8 @@
 			var rows = plugin.getRows(element);
 
 			rows.sort(function(a,b){
-				var _a = plugin.getRowSortableValue(a,settings);
-				var _b = plugin.getRowSortableValue(b,settings);
+				var _a = parseInt( plugin.getRowSortableValue(a,settings), 10 );
+				var _b = parseInt( plugin.getRowSortableValue(b,settings), 10 );
 
 				if( plugin.is_blank(_b) || ( _a < _b ) ){
 					return -1;
@@ -66,7 +66,7 @@
 		},
 
 		is_blank: function(val){
-			return (typeof(v) === 'undefined' || v === null);
+			return (typeof(val) === 'undefined' || val === null);
 		},
 
 		getRows: function(element){
