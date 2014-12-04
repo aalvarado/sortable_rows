@@ -70,7 +70,7 @@
 		},
 
 		getRows: function(element){
-			return $(this.element).find('tbody tr:visible').get();
+			return $(element).find('tbody tr:visible').get();
 		},
 
 		getRowSortableEl: function(element) {
