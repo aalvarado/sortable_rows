@@ -1,0 +1,30 @@
+{
+  "name": "sortable_rows",
+  "version": "0.1.3",
+  "homepage": "https://github.com/aalvarado/sortable_rows",
+  "authors": [
+    "aalvarado <adan.alvarado7@gmail.com>"
+  ],
+  "description": "Manages sorting and moving rows on a table using an input for comparison",
+  "main": "sortable_rows.jquery.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "table",
+    "sort",
+    "rows",
+    "input",
+    "field",
+    "automatic"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
