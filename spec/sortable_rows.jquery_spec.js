@@ -3,10 +3,11 @@ describe("sortableRows", function() {
 
   beforeEach(function(){
     loadFixtures('example.html');
-    elem = $('.sortable');
+    elem = $('table.sortable');
   });
 
-  it("is able to be attached to tables ", function() {
-    var table = $('')
+  it("is able to load plugin on table elements", function(){
+    $(elem).sortableRows();
+    expect($(elem).data('plugin_sortableRows')).not.toBe(null);
   });
 });
