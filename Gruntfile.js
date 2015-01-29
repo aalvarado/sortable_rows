@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
   grunt.initConfig({
     jasmine: {
-      pivotal: {
+      tests: {
         src: 'src/*.js',
         options: {
           specs: 'spec/*_spec.js',
