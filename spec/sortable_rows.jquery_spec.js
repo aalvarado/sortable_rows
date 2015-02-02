@@ -20,5 +20,14 @@ describe("sortableRows", function() {
       first_row = $(elem).find( first_row_el );
       expect( first_row.val() ).toBe('0');
     });
+
+    it("sorts correctly", function() {
+      var rows_names = 'tbody tr input.sort';
+      $(elem).sortableRows();
+      var rows = $(elem).find(rows_names);
+      $.each(rows, function(i, e){
+        expect(parseInt($(e).val(), 10)).toBe(i);
+      });
+    });
   });
 });
